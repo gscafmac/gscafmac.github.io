@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Photo & Text Journal</title>
+    <title>My Photo Journal</title>
     <style>
         :root {
-            --bg-color: #f8f9fa;
-            --card-color: #ffffff;
-            --text-color: #212529;
-            --accent-color: #4a90e2;
+            --bg-color: #ffffff;
+            --text-color: #111111;
+            --caption-color: #666666;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -20,78 +19,79 @@
             padding: 20px;
         }
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
         }
         header {
             text-align: center;
-            padding: 40px 0;
+            padding: 60px 0 40px 0;
         }
-        h1 { margin: 0 0 10px 0; color: #111; }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
+        h1 { margin: 0 0 10px 0; font-size: 2rem; font-weight: 600; }
+        .subtitle { color: var(--caption-color); margin: 0; font-size: 1rem; }
+        
+        /* The Stream Layout */
+        .photo-stream {
+            display: flex;
+            flex-direction: column;
+            gap: 60px; /* Large space between each photo entry */
+            margin-top: 40px;
         }
-        .card {
-            background: var(--card-color);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-        }
-        .card:hover { transform: translateY(-4px); }
-        .card img {
+        .photo-entry {
             width: 100%;
-            height: 220px;
-            object-fit: cover;
+        }
+        .photo-entry img {
+            width: 100%;
+            height: auto; /* Keeps native image proportions instead of cropping */
             display: block;
+            border-radius: 4px;
         }
-        .card-content { padding: 20px; }
-        .card-date {
-            font-size: 0.85rem;
-            color: #6c757d;
-            margin-bottom: 8px;
+        .caption-box {
+            padding-top: 12px;
+            max-width: 100%;
         }
-        .card-title {
-            font-size: 1.2rem;
-            margin: 0 0 10px 0;
-            color: #111;
+        .photo-date {
+            font-size: 0.8rem;
+            color: var(--caption-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
         }
-        .card-text { margin: 0; font-size: 0.95rem; }
+        .photo-caption {
+            font-size: 0.95rem;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <header>
-            <h1>Photo & Text Gallery</h1>
-            <p>A simple space to share stories, updates, and photography.</p>
+            <h1>Photo Journal</h1>
+            <p class="subtitle">A minimal stream of captured moments and thoughts.</p>
         </header>
 
-        <main class="grid">
-            <!-- Card 1 -->
-            <div class="card">
-                <img src="images/Y67852006390-R1-020-8A copy.jpg" alt="Skating in winter">
-                <div class="card-content">
-                    <div class="card-date">September 23, 2026</div>
-                    <h2 class="card-title">Evening by the Water</h2>
-                    <p class="card-text">Caught a breathtaking sunset today. The way the light hit the ripples was perfect.</p>
+        <main class="photo-stream">
+            
+            <!-- Photo Entry 1 -->
+            <div class="photo-entry">
+                <img src="images/Y67852006390-R1-020-8A copy.jpg" alt="Golden ocean sunset">
+                <div class="caption-box">
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">Ghost Building.</p>
                 </div>
             </div>
 
-            <!-- Card 2 -->
-            <div class="card">
-                <img src="images/Y80862003327-R1-E005.jpg" alt="Ghost building">
-                <div class="card-content">
-                    <div class="card-date">September 20, 2026</div>
-                    <h2 class="card-title">Code & Coffee</h2>
-                    <p class="card-text">Spending the rainy afternoon structuring light logic projects and enjoying a warm brew.</p>
+            <!-- Photo Entry 2 -->
+            <div class="photo-entry">
+                <img src="images/Y80862003327-R1-E005.jpg" alt="Coffee and notebook">
+                <div class="caption-box">
+                    <div class="photo-date">September 20, 2026</div>
+                    <p class="photo-caption">Skating in the park</p>
                 </div>
             </div>
             
-            <!-- Add more cards right here following the same format -->
+            <!-- Future photos go right here following the exact same format -->
+
         </main>
     </div>
 
