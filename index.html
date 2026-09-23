@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Photo Journal</title>
+    <title>Nubian Platform</title>
     <style>
         :root {
             --bg-color: #ffffff;
@@ -19,7 +19,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 1000px; /* Expanded slightly for ideal side-by-side spacing */
             margin: 0 auto;
         }
         header {
@@ -27,38 +27,59 @@
             padding: 60px 0 40px 0;
         }
         h1 { margin: 0 0 10px 0; font-size: 2rem; font-weight: 600; }
-        .subtitle { color: var(--caption-color); margin: 0; font-size: 1rem; }
+        .subtitle { color: var(--caption-color); margin: 0; font-size: 1rem; text-transform: lowercase; }
         
-        /* The Stream Layout */
+        /* The Side-by-Side Flex Layout */
         .photo-stream {
             display: flex;
             flex-direction: column;
-            gap: 60px; /* Large space between each photo entry */
+            gap: 80px; /* Space between rows */
             margin-top: 40px;
         }
-        .photo-entry {
+        .photo-row {
+            display: flex;
+            align-items: center; /* Centers items vertically next to each other */
+            gap: 40px;
             width: 100%;
         }
-        .photo-entry img {
+        
+        /* Automatically flips direction on every second image item */
+        .photo-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        /* 60% Image / 40% Text Proportion Split */
+        .photo-box {
+            flex: 3; 
+        }
+        .photo-box img {
             width: 100%;
-            height: auto; /* Keeps native image proportions instead of cropping */
+            height: auto;
             display: block;
             border-radius: 4px;
         }
-        .caption-box {
-            padding-top: 12px;
-            max-width: 100%;
+        .text-box {
+            flex: 2;
         }
         .photo-date {
             font-size: 0.8rem;
             color: var(--caption-color);
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
         .photo-caption {
             font-size: 0.95rem;
             margin: 0;
+        }
+
+        /* Mobile View: Stack gracefully back into a simple column on mobile viewports */
+        @media (max-width: 768px) {
+            .photo-row, .photo-row:nth-child(even) {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .photo-stream { gap: 50px; }
         }
     </style>
 </head>
@@ -66,62 +87,77 @@
 
     <div class="container">
         <header>
-            <h1>Photo Journal</h1>
-            <p class="subtitle">A minimal stream of captured moments and thoughts.</p>
+            <h1>Nubian Platform</h1>
+            <p class="subtitle">collection</p>
         </header>
 
         <main class="photo-stream">
             
-            <!-- Photo Entry 1 -->
-            <div class="photo-entry">
-                <img src="images/Y67852006390-R1-020-8A copy.jpg" alt="Golden ocean sunset">
-                <div class="caption-box">
+            <!-- Entry 1 -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y67852006390-R1-020-8A copy.jpg" alt="Ghost Building">
+                </div>
+                <div class="text-box">
                     <div class="photo-date">September 23, 2026</div>
                     <p class="photo-caption">Ghost Building.</p>
                 </div>
             </div>
 
-            <!-- Photo Entry 2 -->
-            <div class="photo-entry">
-                <img src="images/Y80862003327-R1-E011.jpg" alt="Coffee and notebook">
-                <div class="caption-box">
+            <!-- Entry 2 -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E011.jpg" alt="Skating in the park">
+                </div>
+                <div class="text-box">
                     <div class="photo-date">September 20, 2026</div>
                     <p class="photo-caption">Skating in the park</p>
                 </div>
             </div>
             
-            <div class="photo-entry">
-                <img src="images/Y80862003327-R1-E013.jpg" alt="Coffee and notebook">
-                <div class="caption-box">
+            <!-- Entry 3 -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E013.jpg" alt="Skating in the park">
+                </div>
+                <div class="text-box">
                     <div class="photo-date">September 20, 2026</div>
                     <p class="photo-caption">Skating in the park</p>
                 </div>
             </div>
 
-            <div class="photo-entry">
-                <img src="images/Y80862003327-R1-E017.jpg" alt="Coffee and notebook">
-                <div class="caption-box">
+            <!-- Entry 4 -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E017.jpg" alt="Skating in the park">
+                </div>
+                <div class="text-box">
                     <div class="photo-date">September 20, 2026</div>
                     <p class="photo-caption">Skating in the park</p>
                 </div>
             </div>
 
-            <div class="photo-entry">
-                <img src="images/Y80862003327-R1-E005.jpg" alt="Coffee and notebook">
-                <div class="caption-box">
+            <!-- Entry 5 -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E005.jpg" alt="Skating in the park">
+                </div>
+                <div class="text-box">
                     <div class="photo-date">September 20, 2026</div>
                     <p class="photo-caption">Skating in the park</p>
                 </div>
             </div>
 
-            <div class="photo-entry">
-                <img src="images/Y80862003327-R1-E019.jpg" alt="Coffee and notebook">
-                <div class="caption-box">
+            <!-- Entry 6 -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E019.jpg" alt="Skating in the park">
+                </div>
+                <div class="text-box">
                     <div class="photo-date">September 20, 2026</div>
                     <p class="photo-caption">Skating in the park</p>
                 </div>
             </div>
-            <!-- Future photos go right here following the exact same format -->
 
         </main>
     </div>
