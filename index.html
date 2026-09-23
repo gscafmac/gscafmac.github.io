@@ -5,162 +5,221 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nubian Platform</title>
     <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #111111;
-            --caption-color: #666666;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 1000px; /* Expanded slightly for ideal side-by-side spacing */
-            margin: 0 auto;
-        }
-        header {
-            text-align: center;
-            padding: 60px 0 40px 0;
-        }
+        :root { --bg-color: #ffffff; --text-color: #111111; --caption-color: #666666; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; margin: 0; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        header { text-align: center; padding: 60px 0 40px 0; }
         h1 { margin: 0 0 10px 0; font-size: 2rem; font-weight: 600; }
         .subtitle { color: var(--caption-color); margin: 0; font-size: 1rem; text-transform: lowercase; }
-        
-        /* The Side-by-Side Flex Layout */
-        .photo-stream {
-            display: flex;
-            flex-direction: column;
-            gap: 80px; /* Space between rows */
-            margin-top: 40px;
-        }
-        .photo-row {
-            display: flex;
-            align-items: center; /* Centers items vertically next to each other */
-            gap: 40px;
-            width: 100%;
-        }
-        
-        /* Automatically flips direction on every second image item */
-        .photo-row:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-        
-        /* 60% Image / 40% Text Proportion Split */
-        .photo-box {
-            flex: 3; 
-        }
-        .photo-box img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 4px;
-        }
-        .text-box {
-            flex: 2;
-        }
-        .photo-date {
-            font-size: 0.8rem;
-            color: var(--caption-color);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
-        }
-        .photo-caption {
-            font-size: 0.95rem;
-            margin: 0;
-        }
-
-        /* Mobile View: Stack gracefully back into a simple column on mobile viewports */
-        @media (max-width: 768px) {
-            .photo-row, .photo-row:nth-child(even) {
-                flex-direction: column;
-                gap: 16px;
-            }
-            .photo-stream { gap: 50px; }
-        }
+        .photo-stream { display: flex; flex-direction: column; gap: 80px; margin-top: 40px; }
+        .photo-row { display: flex; align-items: center; gap: 40px; width: 100%; }
+        .photo-row:nth-child(even) { flex-direction: row-reverse; }
+        .photo-box { flex: 3; }
+        .photo-box img { width: 100%; height: auto; display: block; border-radius: 4px; }
+        .text-box { flex: 2; }
+        .photo-date { font-size: 0.8rem; color: var(--caption-color); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .photo-caption { font-size: 0.95rem; margin: 0; }
+        @media (max-width: 768px) { .photo-row, .photo-row:nth-child(even) { flex-direction: column; gap: 16px; } .photo-stream { gap: 50px; } }
     </style>
 </head>
 <body>
-
     <div class="container">
         <header>
             <h1>Nubian Platform</h1>
             <p class="subtitle">collection</p>
         </header>
-
         <main class="photo-stream">
-            
-            <!-- Entry 1 -->
+            <!-- Entry -->
             <div class="photo-row">
                 <div class="photo-box">
-                    <img src="images/Y67852006390-R1-020-8A copy.jpg" alt="Ghost Building">
+                    <img src="images/000052170019.jpg" alt="000052170019">
                 </div>
                 <div class="text-box">
                     <div class="photo-date">September 23, 2026</div>
-                    <p class="photo-caption">Ghost Building.</p>
+                    <p class="photo-caption">000052170019</p>
                 </div>
             </div>
-
-            <!-- Entry 2 -->
+            <!-- Entry -->
             <div class="photo-row">
                 <div class="photo-box">
-                    <img src="images/Y80862003327-R1-E011.jpg" alt="Skating in the park">
+                    <img src="images/000052170025.jpg" alt="000052170025">
                 </div>
                 <div class="text-box">
-                    <div class="photo-date">September 20, 2026</div>
-                    <p class="photo-caption">Skating in the park</p>
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">000052170025</p>
                 </div>
             </div>
-            
-            <!-- Entry 3 -->
+            <!-- Entry -->
             <div class="photo-row">
                 <div class="photo-box">
-                    <img src="images/Y80862003327-R1-E013.jpg" alt="Skating in the park">
+                    <img src="images/IMG_3539.jpg" alt="IMG 3539">
                 </div>
                 <div class="text-box">
-                    <div class="photo-date">September 20, 2026</div>
-                    <p class="photo-caption">Skating in the park</p>
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">IMG 3539</p>
                 </div>
             </div>
-
-            <!-- Entry 4 -->
+            <!-- Entry -->
             <div class="photo-row">
                 <div class="photo-box">
-                    <img src="images/Y80862003327-R1-E017.jpg" alt="Skating in the park">
+                    <img src="images/IMG_3540.jpg" alt="IMG 3540">
                 </div>
                 <div class="text-box">
-                    <div class="photo-date">September 20, 2026</div>
-                    <p class="photo-caption">Skating in the park</p>
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">IMG 3540</p>
                 </div>
             </div>
-
-            <!-- Entry 5 -->
+            <!-- Entry -->
             <div class="photo-row">
                 <div class="photo-box">
-                    <img src="images/Y80862003327-R1-E005.jpg" alt="Skating in the park">
+                    <img src="images/Y67852006389-R1-015-6.jpg" alt="Y67852006389 R1 015 6">
                 </div>
                 <div class="text-box">
-                    <div class="photo-date">September 20, 2026</div>
-                    <p class="photo-caption">Skating in the park</p>
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">Y67852006389 R1 015 6</p>
                 </div>
             </div>
-
-            <!-- Entry 6 -->
+            <!-- Entry -->
             <div class="photo-row">
                 <div class="photo-box">
-                    <img src="images/Y80862003327-R1-E019.jpg" alt="Skating in the park">
+                    <img src="images/Y67852006389-R1-021-9.jpg" alt="Y67852006389 R1 021 9">
                 </div>
                 <div class="text-box">
-                    <div class="photo-date">September 20, 2026</div>
-                    <p class="photo-caption">Skating in the park</p>
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">Y67852006389 R1 021 9</p>
                 </div>
             </div>
-
+            <!-- Entry -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y67852006390-R1-020-8A copy.jpg" alt="Y67852006390 R1 020 8A copy">
+                </div>
+                <div class="text-box">
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">Y67852006390 R1 020 8A copy</p>
+                </div>
+            </div>
+            <!-- Entry -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E002.jpg" alt="Y80862003327 R1 E002">
+                </div>
+                <div class="text-box">
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">Y80862003327 R1 E002</p>
+                </div>
+            </div>
+            <!-- Entry -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E005.jpg" alt="Y80862003327 R1 E005">
+                </div>
+                <div class="text-box">
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">Y80862003327 R1 E005</p>
+                </div>
+            </div>
+            <!-- Entry -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E008.jpg" alt="Y80862003327 R1 E008">
+                </div>
+                <div class="text-box">
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">Y80862003327 R1 E008</p>
+                </div>
+            </div>
+            <!-- Entry -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E009.jpg" alt="Y80862003327 R1 E009">
+                </div>
+                <div class="text-box">
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">Y80862003327 R1 E009</p>
+                </div>
+            </div>
+            <!-- Entry -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E010.jpg" alt="Y80862003327 R1 E010">
+                </div>
+                <div class="text-box">
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">Y80862003327 R1 E010</p>
+                </div>
+            </div>
+            <!-- Entry -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E011.jpg" alt="Y80862003327 R1 E011">
+                </div>
+                <div class="text-box">
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">Y80862003327 R1 E011</p>
+                </div>
+            </div>
+            <!-- Entry -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E013.jpg" alt="Y80862003327 R1 E013">
+                </div>
+                <div class="text-box">
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">Y80862003327 R1 E013</p>
+                </div>
+            </div>
+            <!-- Entry -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E017.jpg" alt="Y80862003327 R1 E017">
+                </div>
+                <div class="text-box">
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">Y80862003327 R1 E017</p>
+                </div>
+            </div>
+            <!-- Entry -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E019.jpg" alt="Y80862003327 R1 E019">
+                </div>
+                <div class="text-box">
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">Y80862003327 R1 E019</p>
+                </div>
+            </div>
+            <!-- Entry -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E025.jpg" alt="Y80862003327 R1 E025">
+                </div>
+                <div class="text-box">
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">Y80862003327 R1 E025</p>
+                </div>
+            </div>
+            <!-- Entry -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E027.jpg" alt="Y80862003327 R1 E027">
+                </div>
+                <div class="text-box">
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">Y80862003327 R1 E027</p>
+                </div>
+            </div>
+            <!-- Entry -->
+            <div class="photo-row">
+                <div class="photo-box">
+                    <img src="images/Y80862003327-R1-E031 copy.jpg" alt="Y80862003327 R1 E031 copy">
+                </div>
+                <div class="text-box">
+                    <div class="photo-date">September 23, 2026</div>
+                    <p class="photo-caption">Y80862003327 R1 E031 copy</p>
+                </div>
+            </div>
         </main>
     </div>
-
 </body>
 </html>
